@@ -14,9 +14,9 @@ class TextNode:
         self.text_type = text_type
         self.url = url
     
-    def __eq__(self, node1, node2):
-        if node1.text == node2.text and node1.text_type == node2.text_type and node1.url == node2.url:
+    def __eq__(self, other_node): # returns true if another TextNode has identical properties
+        if self.text == other_node.text and self.text_type == other_node.text_type and self.url == other_node.url:
             return True
     
-    def __repr__(self):
+    def __repr__(self): # returns the textnode and its properties as a string like you'd see it in code, e.g. TextNode(x, y, z)
         return f"TextNode({self.text}, {self.text_type.value}, {self.url})"
